@@ -1,0 +1,18 @@
+{
+  "name": "test-script",
+  "version": "1.0.0",
+  "description": "Technical Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Doltons Edward N Pabiaran",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1"
+  }
+}
