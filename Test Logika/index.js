@@ -29,15 +29,59 @@ function generateQuantity(input) {
 
 // jawaban soal A
 let input = [5, 7, 7, 9, 10, 4, 5, 10, 6, 5]
-console.log(input)
-generateQuantity(input)
+console.log('Input: ', [input.toString()])
+console.log('Output: ', generateQuantity(input), '\n')
 
 // jawaban soal B
 input = [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
-console.log(input)
-generateQuantity([6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5])
+console.log('Input: ', [input.toString()])
+console.log('Output: ', generateQuantity(input), '\n')
 
 // jawaban soal C
 input = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3]
-console.log(input)
-generateQuantity([1, 1, 3, 1, 2, 1, 3, 3, 3, 3])
+console.log('Input: ', [input.toString()])
+console.log('Output: ', generateQuantity(input), '\n')
+
+
+
+
+
+
+
+console.log('\n\n')
+
+
+
+
+
+
+
+/*
+    Soal 2
+    Hitunglah jumlah kata pada sebuah kalimat.
+    Contoh:
+    Input: Kemarin Shopia per[gi ke mall.
+    Output: 4 (Karena kata pergi memiliki special karakter)
+*/
+
+function countNumberOfWord (word) {
+    const filter = /[!@#$%^&*()_+\=\[\]{};':"\\|<>\/]/
+    const splitWord = word.split(' ')
+
+    return splitWord.filter(item => !filter.test(item)).length
+}
+
+// jawaban soal A
+input = 'Saat meng*ecat tembok, Agung dib_antu oleh Raihan.'
+console.log('Input: ', input)
+console.log('Output: ', countNumberOfWord(input), '\n')
+
+// jawaban soal B
+input = 'Berapa u(mur minimal[ untuk !mengurus ktp?'
+console.log('Input: ', input)
+console.log('Output: ', countNumberOfWord(input), '\n')
+
+// jawaban soal C
+input = 'Masing-masing anak mendap(atkan uang jajan ya=ng be&rbeda.'
+console.log('Input: ', input)
+console.log('Output: ', countNumberOfWord(input), '\n')
