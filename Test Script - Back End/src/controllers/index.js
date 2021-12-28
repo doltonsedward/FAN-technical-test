@@ -1,3 +1,9 @@
-const getData = async () => {
-    
+const db = require("../../config/db")
+
+exports.getData = (req, res) => {
+    db.query('SELECT * FROM users', (error, result) => {
+        if (error) throw error
+
+        res.status(200).send(result.rows)
+    })
 }
