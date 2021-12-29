@@ -29,7 +29,7 @@ exports.login = (req, res) => {
         const token = jwt.sign({ id }, process.env.TOKEN_KEY, { expiresIn: '1d' })
 
         res.status(200).send({
-            status: 'success',
+            message: 'Success login',
             token
         })
     })
