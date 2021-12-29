@@ -44,3 +44,23 @@ exports.getData = (req, res) => {
         })
     })
 }
+
+
+exports.addData = (req, res) => {
+    const { id } = req.user
+    const { type, waktu } = req.body
+    const query = `
+    INSERT INTO epresence (id_users, type, waktu) VALUES (
+        $1, $2, $3
+    )
+    `
+
+    db.query(query, [id, type, waktu], (error, result) => {
+        if (error) throw error
+
+        console.log(req.user)
+        res.status(200).send({
+            message: 'Success insert data'
+        })
+    })
+}
