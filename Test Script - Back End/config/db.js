@@ -3,7 +3,7 @@ const db = new Pool({
     user: 'me',
     host: process.env.HOST || 'localhost',
     database: 'pt_fan_api',
-    password: process.env.PASS_USER || 'Adatongg_05',
+    password: process.env.PASS_USER,
     port: 5432,
 })
 
