@@ -9,7 +9,11 @@ exports.getData = (req, res) => {
     `
 
     db.query(query, (error, result) => {
-        if (error) throw error
+        if (error) {
+            return res.status(500).send({
+                message: 'Internal server error'
+            })
+        }
 
         let data = []
 
@@ -56,9 +60,12 @@ exports.addData = (req, res) => {
     `
 
     db.query(query, [id, type, waktu], (error, result) => {
-        if (error) throw error
+        if (error) {
+            return res.status(500).send({
+                message: 'Internal server error'
+            })
+        }
 
-        console.log(req.user)
         res.status(200).send({
             message: 'Success insert data'
         })

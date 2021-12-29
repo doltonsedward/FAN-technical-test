@@ -7,7 +7,11 @@ exports.login = (req, res) => {
     const { email } = req.body
     
     db.query(`SELECT * FROM users WHERE email = $1`, [email], async (error, result) => {
-        if (error) throw error
+        if (error) {
+            return res.status(500).send({
+                message: 'Internal server error'
+            })
+        }
 
         if (!result.rows.length) {
             return res.status(404).send({
